@@ -35,4 +35,4 @@ c) Job:
 A job is an abstract class from which two classes are inherited; upJob and downJob. These jobs have two map (floor: passengers) member varibles, a callFloors map and a destFloors map. calls are added to callFloors and destFloors. If a callFloor or a destFloor is already in the map then only passenger count is increased by one, otherwise a new entry is added. 
 
 When an elevator reaches a floor, it checks if the topCall or topDest is current floor. It then removes the topCall or topDest from the map and updates the passengerCount.
-# elevator-control-system
+
