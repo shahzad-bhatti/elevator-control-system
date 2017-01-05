@@ -3,7 +3,10 @@
 run ``make`` to build the program (you will need C++14). I tested it with GCC 5.4 on ubuntu 16.04.
 
 #Running the program: 
-``./ecs <number of elevators> <elevator capacity> <input file containg commands>``
+``./ecs <number of floors> <number of elevators> <elevator capacity> <input file containg commands>``
+
+for example ``./ecs 10 3 4 test2``
+
 
 Input file can have the following commands on at a line.
 a) ``status`` - display the status of each elevator.
