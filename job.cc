@@ -4,9 +4,9 @@
 job::job() {
 }
     
+    
 jobUp::jobUp(int cFloor, int dFloor) 
     : job() {
-//    cout << cFloor << dFloor << endl;
     addCall(cFloor);
     addDest(dFloor);
 }

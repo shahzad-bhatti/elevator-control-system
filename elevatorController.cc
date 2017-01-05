@@ -29,7 +29,7 @@ void elevatorController::readInput(string filename) {
 		} else if (line.compare("pickup") == 0) {
 			int call, dest;
 			file >> call >> dest;
-			cout << "pickup " << call << " -> " << dest; 
+			cout << "pickup " << call << " -> " << dest;
 			pickUp(call, dest);
 		} else {
 			cout << "invalid command " << line << endl;

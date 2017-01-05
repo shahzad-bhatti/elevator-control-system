@@ -5,8 +5,6 @@
 #include <cstdlib>
 #include <iostream>
 
-
-
 using namespace std;
 
 int main(int argc, char *argv[]) {
@@ -23,7 +21,6 @@ int main(int argc, char *argv[]) {
     string filename = argv[4];
 
     elevatorController ec(floorCount, elevatorCount, capacity);
-
     ec.readInput(filename);
 
     return 0;

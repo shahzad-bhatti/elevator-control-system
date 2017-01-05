@@ -65,26 +65,26 @@ void elevator::nextFloor() {
         }
     }
 }
+
+void elevator::takePassengers() {
+    passengerCount_ += currJob_->removeCall(currFloor_);
+    passengerCount_ = min(passengerCount_, capacity_);
+    if (currJob_->type == jobType::UP) {
+        currStatus_ = status::UP;
+    } else {
+        currStatus_ = status::DOWN;
+    }
+}
+
 void elevator::takeStep() {
     if (currStatus_ == status::ON_WAY) {
-        if (currFloor_ != currJob_->topCall()) {
-            nextFloor();
-        } else {
-            if (currJob_->type == jobType::UP) {
-                currStatus_ = status::UP;
-            } else {
-                currStatus_ = status::DOWN;
-            }
-            takeStep();
-        }
-        
         if (currFloor_ == currJob_->topCall()) {
-            passengerCount_ += currJob_->removeCall(currFloor_);
-            passengerCount_ = min(passengerCount_, capacity_);
-            if (currJob_->type == jobType::UP) {
-                currStatus_ = status::UP;
-            } else {
-                currStatus_ = status::DOWN;
+            takePassengers();            
+            takeStep();
+        } else {
+            nextFloor();
+            if (currFloor_ == currJob_->topCall()) {
+                takePassengers();
             }
         }
 

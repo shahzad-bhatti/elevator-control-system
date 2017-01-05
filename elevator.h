@@ -26,26 +26,22 @@ class elevator {
 public:
         
     elevator(int id, int capacity);
-
     elevator(int id, int capacity, int currFloor);
     
     void addPickUp(int callFloor, int destFloor);
-    
     int surplus();
     void step();
     void printStatus();
-
     status getStatus();
-    
     int getId();
-    
     int getCurrFloor();
-    
     int qSize();
+
 private:
     void addJob(int callFloor, int destFloor);
     void nextFloor();
     void takeStep();
+    void takePassengers();
     string getStatusStr();
 
     int id_;

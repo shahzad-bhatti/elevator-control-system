@@ -13,7 +13,6 @@ public:
 	
 	void readInput(string filename);
 	void printStatus();
-
 	void step();
 	void pickUp(int callFloor, int destFloor);
 

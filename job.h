@@ -74,8 +74,6 @@ private:
     map<int, int, greaterComp> destFloors_;
 };
 
-
-
 inline unique_ptr<job> make_job(int cFloor, int dFloor) {
     if (cFloor < dFloor) {
         unique_ptr<jobUp> j(new jobUp{cFloor, dFloor});
@@ -85,6 +83,4 @@ inline unique_ptr<job> make_job(int cFloor, int dFloor) {
         return j;
     }
 }
-
-
 
