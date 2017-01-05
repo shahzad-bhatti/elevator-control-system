@@ -1,25 +1,26 @@
-Building the program:
-run "make" to build the program (you will need C++14). I tested it with GCC 5.4 on ubuntu 16.04.
+#Building the program:
 
-Running the program: 
-./ecs <number of elevators> <elevator capacity> <input file containg commands>
+run ``make`` to build the program (you will need C++14). I tested it with GCC 5.4 on ubuntu 16.04.
+
+#Running the program: 
+``./ecs <number of elevators> <elevator capacity> <input file containg commands>``
 
 Input file can have the following commands on at a line.
-a) status - display the status of each elevator.
-b) pickup <call floor> <dest floor> 
-c) step - each non-idle elvator moves to the next floor depending on the job.
+a) ``status`` - display the status of each elevator.
+b) ``pickup <call floor> <dest floor>`` 
+c) ``step`` - each non-idle elvator moves to the next floor depending on the job.
 
-Assumptions:
+#Assumptions:
 1. All elvators are identical in terms of speed and capacity.
 2. Time delay for loading/unloading passerngers is same regardless of the number of passerngers.
 3. All elvators can serve all floors.
 4. If an elevator reaches its capacity, it does not accept more passengers.
 
-Design:
+#Design:
 There are three classes in the elevator control system namely elevatorController, elevator, job.
 
 a) Elevator Controller:
-An elevator controller object controls all the elevators. It is contructed with args <number of elevators> <elevator capacity>. It then constructs <number of elevators> and stores them in a vector.
+An elevator controller object controls all the elevators. It is contructed with args ``<number of elevators> <elevator capacity>``. It then constructs ``<number of elevators>`` and stores them in a vector.
 
 Upon receiving a pickup command, it calculates a score for each elevator and assign the pickup job to the elevator with lowest score. For score calculation, please see pickUp function in elevatorController.cc.
 
